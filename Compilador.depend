@@ -1,0 +1,18 @@
+# depslib dependency file v1.0
+1712229333 source:c:\users\carlinhos\desktop\sb2024.1\compilador\main.cpp
+	<iostream>
+	<fstream>
+	<string>
+	"lexico.hpp"
+
+1712194542 c:\users\carlinhos\desktop\sb2024.1\compilador\lexicoh.hpp
+
+1712234092 source:c:\users\carlinhos\desktop\sb2024.1\compilador\lexico.cpp
+	<iostream>
+	<cstring>
+	<vector>
+	"lexico.hpp"
+
+1712196233 c:\users\carlinhos\desktop\sb2024.1\compilador\lexico.hpp
+	<string>
+
