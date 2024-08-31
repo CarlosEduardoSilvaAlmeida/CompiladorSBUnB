@@ -1,27 +1,47 @@
 #include <iostream>
-#include <fstream>
-#include <string>
-#include "lexico.hpp"
+#include "assembler.h"
+#include "preprocessor.h"
+#include "utils.h"
 
 
-using namespace std;
 
-
-void analise_lexa(std::string& linha);
-
-
-int main()
+int main(int argc, char *argv[])
 {
-    std::ifstream file("codigo.txt");
-    if(!file)
-        cout << "Falhou";
-    std::string linha;
-    while (std::  getline(file, linha))
+    if (argc < 3)
     {
-        //std::cout << linha << '\n';
-        analise_lexa(linha);
+        std::cerr << "Usage: " << argv[0] << " -p input.asm | -o input.pre" << std::endl;
+        return 1;
     }
 
-    file.close(); // Fecha o arquivo
+    std::string mode = argv[1];
+    std::string inputFile = argv[2];
+
+    try
+    {
+        Utils utils;
+        if (mode == "-p")
+        {
+            Preprocessor preprocessor;
+            std::string preprocessedFile = utils.replaceExtension(inputFile, ".pre");
+            preprocessor.preprocess(inputFile, preprocessedFile);
+        }
+        else if (mode == "-o")
+        {
+            Assembler assembler;
+            std::string preprocessedFile = utils.replaceExtension(inputFile, ".obj");
+            assembler.assemble(inputFile, preprocessedFile);
+        }
+        else
+        {
+            std::cerr << "Unknown mode: " << mode << std::endl;
+            return 1;
+        }
+    }
+    catch (const std::exception &e)
+    {
+        std::cerr << e.what() << std::endl;
+        return 1;
+    }
+
     return 0;
 }
