@@ -1,0 +1,316 @@
+First pass:
+
+
+ Symbol Table:
+
+
+ Definition Table:
+
+
+ Usage Table:
+
+
+ Pending References:
+Processing label: MOD_A
+Found BEGIN directive.
+
+
+ Symbol Table:
+Label: MOD_A, Address: 0, Extern: 0
+
+
+ Definition Table:
+
+
+ Usage Table:
+
+
+ Pending References:
+Processing label: R
+Found EXTERN directive.
+
+
+ Symbol Table:
+Label: R, Address: 0, Extern: 1
+Label: MOD_A, Address: 0, Extern: 0
+
+
+ Definition Table:
+
+
+ Usage Table:
+
+
+ Pending References:
+Processing label: MOD_B
+Found EXTERN directive.
+
+
+ Symbol Table:
+Label: MOD_B, Address: 0, Extern: 1
+Label: R, Address: 0, Extern: 1
+Label: MOD_A, Address: 0, Extern: 0
+
+
+ Definition Table:
+
+
+ Usage Table:
+
+
+ Pending References:
+Found PUBLIC directive.
+
+
+ Symbol Table:
+Label: MOD_B, Address: 0, Extern: 1
+Label: R, Address: 0, Extern: 1
+Label: MOD_A, Address: 0, Extern: 0
+
+
+ Definition Table:
+Label: A, Address: -1
+
+
+ Usage Table:
+
+
+ Pending References:
+Found PUBLIC directive.
+
+
+ Symbol Table:
+Label: MOD_B, Address: 0, Extern: 1
+Label: R, Address: 0, Extern: 1
+Label: MOD_A, Address: 0, Extern: 0
+
+
+ Definition Table:
+Label: B, Address: -1
+Label: A, Address: -1
+
+
+ Usage Table:
+
+
+ Pending References:
+Found PUBLIC directive.
+
+
+ Symbol Table:
+Label: MOD_B, Address: 0, Extern: 1
+Label: R, Address: 0, Extern: 1
+Label: MOD_A, Address: 0, Extern: 0
+
+
+ Definition Table:
+Label: L1, Address: -1
+Label: B, Address: -1
+Label: A, Address: -1
+
+
+ Usage Table:
+
+
+ Pending References:
+Processing general instruction: INPUTin location counter: 0
+Adding pending reference for operand: Ain location counter: 1
+
+
+ Symbol Table:
+Label: MOD_B, Address: 0, Extern: 1
+Label: R, Address: 0, Extern: 1
+Label: MOD_A, Address: 0, Extern: 0
+
+
+ Definition Table:
+Label: L1, Address: -1
+Label: B, Address: -1
+Label: A, Address: -1
+
+
+ Usage Table:
+
+
+ Pending References:
+Label: A, Address: 1
+Processing general instruction: INPUTin location counter: 2
+Adding pending reference for operand: Bin location counter: 3
+
+
+ Symbol Table:
+Label: MOD_B, Address: 0, Extern: 1
+Label: R, Address: 0, Extern: 1
+Label: MOD_A, Address: 0, Extern: 0
+
+
+ Definition Table:
+Label: L1, Address: -1
+Label: B, Address: -1
+Label: A, Address: -1
+
+
+ Usage Table:
+
+
+ Pending References:
+Label: B, Address: 3
+Label: A, Address: 1
+Processing general instruction: JMPin location counter: 4
+1
+
+
+ Symbol Table:
+Label: MOD_B, Address: 0, Extern: 1
+Label: R, Address: 0, Extern: 1
+Label: MOD_A, Address: 0, Extern: 0
+
+
+ Definition Table:
+Label: L1, Address: -1
+Label: B, Address: -1
+Label: A, Address: -1
+
+
+ Usage Table:
+Label: MOD_B, Address: 5
+
+
+ Pending References:
+Label: B, Address: 3
+Label: A, Address: 1
+Processing label: L1
+Processing label without specific directive.
+Label: L1 Address: 6
+Operand: R
+Operand: +
+Operand: 1
+
+
+ Symbol Table:
+Label: +, Address: 0, Extern: 0
+Label: L1, Address: 6, Extern: 0
+Label: MOD_B, Address: 0, Extern: 1
+Label: R, Address: 0, Extern: 1
+Label: MOD_A, Address: 0, Extern: 0
+
+
+ Definition Table:
+Label: L1, Address: 6
+Label: B, Address: -1
+Label: A, Address: -1
+
+
+ Usage Table:
+Label: R, Address: 7
+Label: MOD_B, Address: 5
+
+
+ Pending References:
+Label: +, Address: 8
+Label: B, Address: 3
+Label: A, Address: 1
+Processing general instruction: STOPin location counter: 9
+
+
+ Symbol Table:
+Label: +, Address: 0, Extern: 0
+Label: L1, Address: 6, Extern: 0
+Label: MOD_B, Address: 0, Extern: 1
+Label: R, Address: 0, Extern: 1
+Label: MOD_A, Address: 0, Extern: 0
+
+
+ Definition Table:
+Label: L1, Address: 6
+Label: B, Address: -1
+Label: A, Address: -1
+
+
+ Usage Table:
+Label: R, Address: 7
+Label: MOD_B, Address: 5
+
+
+ Pending References:
+Label: +, Address: 8
+Label: B, Address: 3
+Label: A, Address: 1
+Processing label: A
+Processing SPACE directive.
+Operand: 1
+
+
+ Symbol Table:
+Label: +, Address: 0, Extern: 0
+Label: L1, Address: 6, Extern: 0
+Label: A, Address: 10, Extern: 0
+Label: MOD_B, Address: 0, Extern: 1
+Label: R, Address: 0, Extern: 1
+Label: MOD_A, Address: 0, Extern: 0
+
+
+ Definition Table:
+Label: L1, Address: 6
+Label: B, Address: -1
+Label: A, Address: 10
+
+
+ Usage Table:
+Label: R, Address: 7
+Label: MOD_B, Address: 5
+
+
+ Pending References:
+Label: +, Address: 8
+Label: B, Address: 3 
+Label: A, Address: 1
+Processing label: B
+Processing SPACE directive.
+Operand: 1
+
+
+ Symbol Table:
+Label: B, Address: 11, Extern: 0
+Label: +, Address: 0, Extern: 0
+Label: L1, Address: 6, Extern: 0
+Label: A, Address: 10, Extern: 0
+Label: MOD_B, Address: 0, Extern: 1
+Label: R, Address: 0, Extern: 1
+Label: MOD_A, Address: 0, Extern: 0
+
+
+ Definition Table:
+Label: L1, Address: 6
+Label: B, Address: 11
+Label: A, Address: 10
+
+
+ Usage Table:
+Label: R, Address: 7
+Label: MOD_B, Address: 5
+
+
+ Pending References:
+Label: +, Address: 8
+Label: B, Address: 3
+Label: A, Address: 1
+Found END directive.
+Second pass: Resolving pending references.
+Writing token: 12
+Resolved pending reference for symbol: A at position 1 with value 10
+Writing token: 12
+Resolved pending reference for symbol: B at position 3 with value 11
+Writing token: 5
+Writing token: 0
+Writing token: 13
+Writing token: 14
+Writing token: 00
+Writing token: 00
+Writing definition table to output file.
+Definition: L1 6
+Definition: B 11
+Definition: A 10
+Writing usage table to output file.
+Usage: R 7
+Usage: MOD_B 5
